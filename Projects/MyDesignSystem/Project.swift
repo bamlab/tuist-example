@@ -14,6 +14,13 @@ let project = Project(
     options: Project
         .Options
         .options(),
+    settings: Settings.settings(
+        configurations: [
+            .debug(name: "Debug"),
+            .release(name: "Staging"),
+            .release(name: "Release"),
+        ]
+    ),
     targets: [Target(
         name: "MyDesignSystem",
         platform: .iOS,

@@ -6,6 +6,12 @@ let dependencies = Dependencies(
      ],*/
     swiftPackageManager: SwiftPackageManagerDependencies([
         .remote(url: "https://github.com/Alamofire/Alamofire.git", requirement: .exact("5.6.1")),
-    ]),
+    ], baseSettings: Settings.settings(
+        configurations: [
+            .debug(name: "Debug"),
+            .release(name: "Staging"),
+            .release(name: "Release"),
+        ]
+    )),
     platforms: [.iOS]
 )
